@@ -2,7 +2,7 @@ const axios = require('axios')
 const algoliasearch = require('algoliasearch')
 const StoryblokClient = require('storyblok-js-client')
 
-export class StoryblokAlgoliaIndexer {
+class StoryblokAlgoliaIndexer {
   constructor({
     algoliaAppId,
     algoliaApiAdminToken,
@@ -48,3 +48,5 @@ export class StoryblokAlgoliaIndexer {
     }).catch(e => { console.log(e) })
   }
 }
+
+module.exports = StoryblokAlgoliaIndexer
