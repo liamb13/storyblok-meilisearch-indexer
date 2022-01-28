@@ -14,7 +14,7 @@ class StoryblokAlgoliaIndexer {
     const storyblok = new StoryblokClient({ accessToken: storyblokContentDeliveryApiToken })
 
     const storyblokOptions = options || {
-      starts_with: 'articles/',
+      starts_with: '',
       per_page: 100,
       page: 1,
       version: 'draft'
