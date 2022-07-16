@@ -35,11 +35,11 @@ class StoryblokAlgoliaIndexer {
           let records = []
           responses.forEach((response) => {
               let data = response.data
-              records = records.concat(data.stories)
+              records = records.concat(data.stories[0].content.body)
           })
-   
+
           records.forEach(record => {
-              record.objectID = record.uuid
+              record.objectID = record._uid
           })
           
           await index.saveObjects(records, { autoGenerateObjectIDIfNotExist: false }).wait().catch(e => { console.log(e) })
